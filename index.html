@@ -157,20 +157,48 @@
             text-decoration: none;
         }
 
-        .download-btn {
-            display: inline-block;
-            background-color: var(--green-color);
+        .header-buttons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .download-btn, .audio-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             color: var(--white-bg);
             padding: 10px 20px;
             border-radius: 5px;
-            margin-top: 20px;
             font-size: 1.1em;
+            text-decoration: none;
             transition: background-color 0.3s ease;
         }
-
+        .download-btn:hover, .audio-btn:hover {
+            text-decoration: none;
+        }
+        
+        .download-btn {
+            background-color: var(--green-color);
+        }
         .download-btn:hover {
             background-color: var(--green-hover-color);
-            text-decoration: none;
+        }
+
+        .audio-btn {
+            background-color: var(--primary-color);
+        }
+        .audio-btn:hover {
+            background-color: var(--primary-hover-color);
+        }
+
+        .download-btn svg, .audio-btn svg {
+            margin-right: 8px;
+            width: 1.2em;
+            height: 1.2em;
+            fill: currentColor;
         }
 
         /* Seções */
@@ -335,7 +363,16 @@
                     <li><a href="#contact">Contato</a></li>
                 </ul>
             </nav>
-            <a href="Curriculum_Vitae_2025_V7.pdf" class="download-btn" target="_blank" rel="noopener noreferrer">Baixar Currículo (PDF)</a>
+            <div class="header-buttons">
+                <a href="Curriculum_Vitae_2025_V7.pdf" class="download-btn" target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/></svg>
+                    Baixar PDF
+                </a>
+                <a href="Currículo_Josafá_Souza_TI_Gestão_e_Liderança.mp3" class="audio-btn" target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 1.2A8.8 8.8 0 0 0 1.2 10a8.8 8.8 0 0 0 8.8 8.8 8.8 8.8 0 0 0 8.8-8.8A8.8 8.8 0 0 0 10 1.2zm0 16.3A7.5 7.5 0 0 1 2.5 10 7.5 7.5 0 0 1 10 2.5a7.5 7.5 0 0 1 7.5 7.5 7.5 7.5 0 0 1-7.5 7.5zM8 6.8l6 3.2-6 3.2V6.8z"/></svg>
+                    Ouvir Podcast
+                </a>
+            </div>
         </header>
 
         <section id="about">
