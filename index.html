@@ -265,6 +265,25 @@
             margin-bottom: 5px;
             color: var(--text-secondary-color);
         }
+        
+        .project-item .tech-stack {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 15px;
+        }
+        .project-item .tech-stack li {
+            padding-left: 20px;
+            position: relative;
+            margin-bottom: 5px;
+            color: var(--text-secondary-color);
+        }
+        .project-item .tech-stack li::before {
+            content: '↳';
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
 
         .skills-list {
             display: flex;
@@ -559,6 +578,17 @@
 
         <section id="projects">
             <h2>Portfólio e Projetos Notáveis</h2>
+            
+            <div class="project-item">
+                <h3>Projeto: Plataforma de Bioinformática - SoftUX</h3>
+                <p><strong>Descrição:</strong> Desenvolvimento da plataforma web para a SoftUX, uma empresa de bioinformática, com foco em um design inovador, futurista e limpo. O projeto inclui animações 3D interativas na seção principal, construídas com Three.js, para uma experiência de usuário imersiva.</p>
+                <ul class="tech-stack">
+                    <li><strong>Frontend:</strong> React, Vite, React Router, Tailwind CSS, Three.js, Lucide React.</li>
+                    <li><strong>Backend (Formulário):</strong> Firebase Functions com Node.js (v20) e Nodemailer.</li>
+                    <li><strong>Hospedagem & Deploy:</strong> Firebase Hosting.</li>
+                </ul>
+                <p><a href="https://www.softux.app.br" target="_blank" rel="noopener noreferrer" title="Visitar o site da SoftUX">Ver Projeto Online (www.softux.app.br)</a></p>
+            </div>
 
             <div class="project-item">
                 <h3>Projeto: Aplicação Web de CRM com Firebase</h3>
