@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Josafá de Pinho Souza - Diretor de Tecnologia e Gestor de Projetos</title>
+    <title>Josafá de Pinho Souza - Full-Stack/DevOps/Cybersecurity</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        /* CSS com Variáveis para fácil manutenção */
         :root {
             --primary-color: #3498db;
             --primary-hover-color: #2980b9;
@@ -23,7 +22,6 @@
             --green-hover-color: #229a54;
         }
 
-        /* Estilos Globais */
         body {
             font-family: 'Roboto', sans-serif;
             margin: 0;
@@ -70,29 +68,41 @@
             font-size: 1.2em;
             color: var(--medium-blue);
             margin-top: 20px;
+            margin-bottom: 10px;
         }
 
         p {
             margin-bottom: 10px;
+            color: var(--text-secondary-color);
         }
-
+        
         ul {
             list-style: none;
             padding: 0;
         }
 
-        ul li {
+        li {
             margin-bottom: 8px;
             padding-left: 20px;
             position: relative;
+            color: var(--text-secondary-color);
         }
 
-        ul.responsibilities li:before {
+        ul li::before {
             content: '•';
             color: var(--primary-color);
             position: absolute;
             left: 0;
             font-weight: bold;
+        }
+        
+        ul ul {
+            margin-top: 8px;
+            padding-left: 20px;
+        }
+
+        ul ul li::before {
+            content: '↳';
         }
 
         a {
@@ -106,7 +116,6 @@
             text-decoration: underline;
         }
 
-        /* Header */
         header {
             background-color: var(--dark-blue);
             color: var(--white-bg);
@@ -124,18 +133,21 @@
         header p {
             font-size: 1.2em;
             margin-top: 0;
+            padding: 0 20px;
+            color: #ecf0f1;
         }
 
         nav ul {
             display: flex;
             justify-content: center;
+            flex-wrap: wrap;
             padding: 10px 0;
             background-color: var(--medium-blue);
             margin: 0;
         }
 
         nav ul li {
-            margin: 0 15px;
+            margin: 5px 15px;
             padding-left: 0;
         }
 
@@ -164,7 +176,7 @@
             flex-wrap: wrap;
             gap: 15px;
         }
-
+        
         .download-btn, .audio-btn {
             display: inline-flex;
             align-items: center;
@@ -176,23 +188,15 @@
             text-decoration: none;
             transition: background-color 0.3s ease;
         }
+
         .download-btn:hover, .audio-btn:hover {
             text-decoration: none;
         }
         
-        .download-btn {
-            background-color: var(--green-color);
-        }
-        .download-btn:hover {
-            background-color: var(--green-hover-color);
-        }
-
-        .audio-btn {
-            background-color: var(--primary-color);
-        }
-        .audio-btn:hover {
-            background-color: var(--primary-hover-color);
-        }
+        .download-btn { background-color: var(--green-color); }
+        .download-btn:hover { background-color: var(--green-hover-color); }
+        .audio-btn { background-color: var(--primary-color); }
+        .audio-btn:hover { background-color: var(--primary-hover-color); }
 
         .download-btn svg, .audio-btn svg {
             margin-right: 8px;
@@ -201,169 +205,33 @@
             fill: currentColor;
         }
 
-        /* Seções */
         section {
-            padding: 20px 0;
+            padding: 10px 20px;
             margin-bottom: 20px;
         }
-
-        #about {
-            text-align: center;
-            padding: 40px 20px;
-            background-color: #f9f9f9;
-            border-radius: 8px;
-            margin-top: 20px;
-        }
-
-        #about h2 {
-            border-bottom: none;
-        }
-
-        #about .profile-photo {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 25px;
-            border: 4px solid var(--white-bg);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-        }
-
-        #about .cta-buttons {
-            margin-top: 20px;
-        }
-
-        #about .cta-buttons a {
-            background-color: var(--primary-color);
-            color: var(--white-bg);
-            padding: 12px 25px;
-            border-radius: 5px;
-            margin: 0 10px;
-            transition: background-color 0.3s ease;
-        }
-
-        #about .cta-buttons a:hover {
-            background-color: var(--primary-hover-color);
-            text-decoration: none;
-        }
-
+        
         .experience-item, .education-item, .project-item {
             margin-bottom: 30px;
-            padding: 20px;
-            background-color: #fdfdfd;
-            border: 1px solid #eee;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-        }
-
-        .experience-item h3, .education-item h3, .project-item h3 {
-            margin-bottom: 5px;
-            color: var(--dark-blue);
-        }
-
-        .experience-item p, .education-item p, .project-item p {
-            margin-bottom: 5px;
-            color: var(--text-secondary-color);
+            padding-top: 10px;
         }
         
-        .project-item .tech-stack {
-            list-style: none;
-            padding-left: 0;
-            margin-top: 15px;
-        }
-        .project-item .tech-stack li {
-            padding-left: 20px;
-            position: relative;
-            margin-bottom: 5px;
-            color: var(--text-secondary-color);
-        }
-        .project-item .tech-stack li::before {
-            content: '↳';
-            color: var(--primary-color);
-            position: absolute;
-            left: 0;
-            font-weight: bold;
+        .skills-section h4 {
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 5px;
         }
 
-        .skills-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 15px;
+        .skills-section ul {
+            columns: 2;
+            column-gap: 40px;
         }
 
-        .skill-tag {
-            background-color: #ecf0f1;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 0.9em;
-            color: var(--text-secondary-color);
-            white-space: nowrap;
-        }
-
-        #contact-info p {
-            margin-bottom: 8px;
-        }
-
-        #contact-info a {
-            display: inline-block;
-            margin-right: 15px;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: var(--dark-blue);
-            color: var(--white-bg);
-            font-size: 0.9em;
-            border-bottom-left-radius: 8px;
-            border-bottom-right-radius: 8px;
-            margin-top: 30px;
-        }
-
-        .social-icons a {
-            color: var(--white-bg);
-            margin: 0 10px;
-            display: inline-block;
-            vertical-align: middle;
-            transition: transform 0.2s ease;
-        }
-        .social-icons a:hover {
-            transform: scale(1.1);
-        }
-        .social-icons svg {
-            width: 24px;
-            height: 24px;
-            fill: currentColor;
-        }
-
-        /* Responsividade */
         @media (max-width: 768px) {
-            .container {
-                margin: 10px;
-                padding: 15px;
+            .skills-section ul {
+                columns: 1;
             }
             h1 { font-size: 2em; }
             h2 { font-size: 1.8em; }
             h3 { font-size: 1.4em; }
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-            }
-            nav ul li { margin: 5px 0; }
-            #about .cta-buttons a {
-                display: block;
-                margin: 10px 0;
-            }
-        }
-
-        @media (max-width: 480px) {
-            h1 { font-size: 1.8em; }
-            h2 { font-size: 1.6em; }
-            h3 { font-size: 1.2em; }
-            .profile-photo { width: 120px; height: 120px; }
-            .skill-tag { font-size: 0.8em; padding: 6px 10px; }
         }
     </style>
 </head>
@@ -371,265 +239,220 @@
     <div class="container">
         <header>
             <h1>Josafá de Pinho Souza</h1>
-            <p>Diretor de Tecnologia e Gestor de Projetos</p>
+            <p>Desenvolvimento Full-Stack/Devops/Git/CI/CD, Especialista em Infraestrutura de TI, Cybersegurança e Operações, Cloud GCP/AWS/AZURE práticas de FinOps.</p>
             <nav>
                 <ul>
-                    <li><a href="#about">Início</a></li>
+                    <li><a href="#summary">Resumo</a></li>
+                    <li><a href="#expertise">Expertise</a></li>
                     <li><a href="#experience">Experiência</a></li>
-                    <li><a href="#education">Educação</a></li>
-                    <li><a href="#skills">Habilidades</a></li>
                     <li><a href="#projects">Projetos</a></li>
+                    <li><a href="#skills">Habilidades</a></li>
+                    <li><a href="#education">Formação</a></li>
+                    <li><a href="#objective">Objetivo</a></li>
                     <li><a href="#contact">Contato</a></li>
                 </ul>
             </nav>
-            <div class="header-buttons">
-                <a href="Curriculum_Vitae_2025_V7.pdf" class="download-btn" target="_blank" rel="noopener noreferrer">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/></svg>
-                    Baixar PDF
-                </a>
-                <a href="Currículo_Josafá_Souza_TI_Gestão_e_Liderança.mp3" class="audio-btn" target="_blank" rel="noopener noreferrer">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 1.2A8.8 8.8 0 0 0 1.2 10a8.8 8.8 0 0 0 8.8 8.8 8.8 8.8 0 0 0 8.8-8.8A8.8 8.8 0 0 0 10 1.2zm0 16.3A7.5 7.5 0 0 1 2.5 10 7.5 7.5 0 0 1 10 2.5a7.5 7.5 0 0 1 7.5 7.5 7.5 7.5 0 0 1-7.5 7.5zM8 6.8l6 3.2-6 3.2V6.8z"/></svg>
-                    Ouvir Podcast
-                </a>
-            </div>
         </header>
 
-        <section id="about">
-            <h2>Sobre Mim</h2>
-            <img src="Josafa Foto CV.jpg" alt="Foto de Josafá de Pinho Souza" class="profile-photo">
-            
-            <p>Profissional com mais de 25 anos de experiência em gestão de tecnologia, liderança de projetos e administração pública. Destaco-me pela visão estratégica, inovação e resolução de problemas complexos, sempre alinhando a tecnologia aos objetivos de negócio.</p>
-            <p>Possuo competências práticas no ciclo completo de desenvolvimento de Web Apps com I.A., da arquitetura à implantação. Atuo como desenvolvedor Full-Stack com proficiência em Back-end (Python com Django e Flask) e Front-end (JavaScript com React e Vue.js). Minha formação acadêmica inclui graduação em Gestão de TI e pós-graduação em andamento em Arquitetura de Software, Ciência de Dados e Cybersecurity, o que me permite unir a gestão de alto nível com a execução técnica.</p>
-            <div class="cta-buttons">
-                <a href="https://www.linkedin.com/in/josafa" target="_blank" rel="noopener noreferrer">Conecte-se no LinkedIn</a>
-                <a href="#projects">Explore Meus Projetos</a>
-            </div>
+        <section id="summary">
+            <h2>Resumo Profissional</h2>
+            <p>Profissional experiente e multifacetado com sólida atuação em infraestrutura de TI, abrangendo redes (Windows e Linux), servidores e segurança. Possuo um histórico comprovado na gestão e otimização de ambientes complexos, garantindo alta disponibilidade, performance e segurança dos sistemas. Minha expertise inclui planejamento, gestão e execução de projetos de Infraestrutura de TI, com foco em resultados e otimização de processos. Sou especialista na definição e implementação de estratégias de cybersegurança alinhadas aos objetivos de negócio, liderando iniciativas como implantação de SIEM, migração segura para a nuvem e adequação à LGPD. Atuo como o elo estratégico entre tecnologia e negócio, garantindo uma infraestrutura de TI robusta, segura e eficiente. Possuo vasta experiência em observabilidade, incluindo monitoramento em tempo real de ecossistemas (infraestrutura, aplicação e negócio) para detecção proativa de anomalias e orquestração de respostas rápidas em crises.</p>
+        </section>
+
+        <section id="expertise">
+            <h2>Áreas de Atuação e Expertise</h2>
+            <p><strong>Desenvolvimento Full-Stack/DevOps/Git/CI/CD:</strong> HTML/PHP/CSS Python, C++, C#, Django, Flask, JavaScript, React, Node.js Vue.js, TypeScript, com Inteligência Artificial: Tensor Flow/ Scikit-learn.</p>
+            <ul>
+                <li>
+                    <strong>Gestão Estratégica de TI e Projetos:</strong>
+                    <ul>
+                        <li>Planejamento, gestão e execução de estratégias de Infraestrutura de TI.</li>
+                        <li>Definição de padrões de arquitetura tecnológica e acompanhamento de novas tecnologias.</li>
+                        <li>Familiaridade com metodologias ágeis e ITIL.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Cybersegurança e Governança:</strong>
+                    <ul>
+                        <li>Definição e implementação de estratégias de cybersegurança.</li>
+                        <li>Liderança de projetos de segurança: SIEM, migração segura para nuvem, LGPD.</li>
+                        <li>Elaboração e manutenção de políticas de segurança da informação (ISO 27001, NIST, LGPD, GDPR).</li>
+                        <li>Supervisão de ferramentas de segurança: SIEM, EDR, IAM, firewalls, DLP.</li>
+                        <li>Coordenação de resposta a incidentes, análise de riscos e planos de continuidade de negócios (BCP/DRP).</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Observabilidade e Operações de TI:</strong>
+                    <ul>
+                        <li>Monitoramento em tempo real de infraestrutura, aplicação e negócio.</li>
+                        <li>Detecção proativa de problemas via engenharia de monitoração e observabilidade.</li>
+                        <li>Coordenação de respostas rápidas em crises, orquestração e automação.</li>
+                        <li>Garantia de estabilidade e eficiência de operações de BI e Malha Batch.</li>
+                    </ul>
+                </li>
+            </ul>
         </section>
 
         <section id="experience">
-            <h2>Minha Jornada Profissional</h2>
-
+            <h2>Experiência Profissional</h2>
             <div class="experience-item">
                 <h3>Diretor de Tecnologia</h3>
                 <p><strong>Prefeitura Municipal de Franco da Rocha</strong> | Janeiro/2022 a Outubro/2024 (2 anos e 10 meses)</p>
-                <ul class="responsibilities">
-                    <li>Comunicação assertiva e clareza na exposição de ideias, capacidade de transmitir informações técnicas e estratégicas de forma objetiva.</li>
-                    <li>Liderança de equipes de alta performance, incentivando a inovação e o desenvolvimento profissional.</li>
-                    <li>Responsável por estruturar e analisar grandes volumes de dados para apoiar a tomada de decisão estratégica.</li>
-                    <li>Utilizar diversas ferramentas e tecnologias para coletar, organizar e analisar dados.</li>
-                    <li>Planejamento, coordenação e execução de projetos de TI, desde a concepção até a implementação.</li>
-                    <li>Gestão de orçamentos, prazos e recursos, assegurando a entrega dos projetos dentro do escopo e qualidade definidos.</li>
-                    <li>Implementação de metodologias ágeis e práticas de gestão de projetos.</li>
-                    <li>Estabelecimento de políticas e processos de governança de TI para garantir a segurança, conformidade e eficiência dos sistemas.</li>
-                    <li>Definir e implementar estratégias de cybersegurança alinhadas aos objetivos do negócio.</li>
-                    <li>Liderar projetos de segurança, como implantação de SIEM, migração segura para nuvem e adequação à LGPD.</li>
-                    <li>Elaborar e manter políticas, normas e procedimentos de segurança da informação (ISO 27001, NIST, LGPD, GDPR).</li>
-                    <li>Supervisionar ferramentas e operações de segurança (SIEM, EDR, IAM, firewalls, DLP).</li>
-                    <li>Coordenar resposta a incidentes, análise de riscos e planos de continuidade (BCP/DRP).</li>
-                    <li>Promover treinamentos e cultura de segurança entre os colaboradores.</li>
-                    <li>Identificação e implementação de novas tecnologias para impulsionar a inovação e a transformação digital dos órgãos públicos municipais.</li>
-                    <li>Gestão de riscos associados à tecnologia, implementando medidas de segurança e planos de contingência.</li>
-                </ul>
-                <h4>Conquistas:</h4>
-                <ul class="responsibilities">
-                    <li>Implementação de projetos de modernização tecnológica que resultaram em maior eficiência e qualidade dos serviços públicos.</li>
+                <ul>
+                    <li>Implementação de projetos de modernização tecnológica, resultando em maior eficiência e qualidade dos serviços públicos.</li>
                     <li>Aumento da segurança da informação e proteção dos dados do município.</li>
-                    <li>Implantação de uma Escola de Governo no município, gerenciando todas as suas fases até o desenvolvimento do Manual de Operações da Escola de Governo, que representou um investimento estratégico na institucionalização do conhecimento e na garantia da eficiência e da perenidade das suas atividades, consolidando um legado importante para a administração pública local.</li>
-                    <li>Elaboração de estudos e pesquisas para o desenvolvimento de metodologia de monitoramento e indicadores para planejamento, avaliação e gestão, bem como para redesenho de processos administrativos das secretarias da prefeitura municipal.</li>
-                    <li>Redesenho de processos de 13 secretarias com a definição e incorporação de melhorias ao trabalho.</li>
+                    <li>Implantação de uma Escola de Governo no município, gerenciando todas as suas fases até o desenvolvimento do Manual de Operações, consolidando um legado para a administração pública local.</li>
+                    <li>Elaboração de estudos e pesquisas para desenvolvimento de metodologia de monitoramento e indicadores para planejamento, avaliação e gestão, e redesenho de processos administrativos.</li>
+                    <li>Redesenho de processos de 13 secretarias com definição e incorporação de melhorias.</li>
                     <li>Desenvolvimento de equipes de TI de alta performance, com foco em inovação e resultados.</li>
                 </ul>
             </div>
-
             <div class="experience-item">
                 <h3>Gerente de Projetos de TI e Teste de Software</h3>
                 <p><strong>Keeggo Tecnologia AS - Banco Santander</strong> | Outubro/2001 a Novembro/2016 (15 anos e 2 meses)</p>
-                <ul class="responsibilities">
-                    <li>Planejar, gerir, controlar e executar a estratégia e projetos de Infraestrutura de TI de acordo com metas de prazos, custos e qualidade, bem como realizar diagnóstico, analisar alternativas e definir solução para a infraestrutura de TI.</li>
-                    <li>Contratar e gerir parcerias estratégicas para desenvolvimento das necessidades da área e definir padrões da arquitetura tecnológica, bem como garantir que os projetos estejam aderentes a estes padrões.</li>
-                    <li>Acompanhar e avaliar novas tecnologias, alternativas e tendências de mercado com o objetivo de propor evoluções na arquitetura e infraestrutura de TI.</li>
-                    <li>Negociar e garantir a gestão orçamentária e de contratos para a operação da infraestrutura, visando maximizar a utilização da infraestrutura existente ou sua melhoria, com o menor custo possível.</li>
-                    <li>Contribuir para a execução dos projetos a serem implantados e desenvolvidos através do trabalho em parceira com outras áreas da diretoria e áreas de negócios, visando à otimização dos recursos humanos e tecnológicos disponibilizados.</li>
-                    <li>Assegurar a gestão de planejamento de capacidade da infraestrutura, realizando estudos de planejamento de capacidade, com medições dos níveis de utilização e tendências de crescimento, determinando os níveis de saturação dos equipamentos e as novas necessidades, formulando, analisando e propondo novas alternativas, bem como efetuando a gestão dos ativos de TI (controle de inventário, aquisição de SW, entre outros).</li>
-                    <li>Elaborar e assegurar o atingimento de metas pré-estabelecidas para a área de infraestrutura, através do monitoramento frequente dos índices disponíveis (ex.: níveis de serviço) com o objetivo de satisfazer as necessidades do usuário final e das estratégias superiores.</li>
-                    <li>Comunicar-se efetivamente com as partes interessadas internas e externas, incluindo a alta administração, os usuários de negócios e os fornecedores de tecnologia e estabelecer, validar e consolidar as políticas e normas relativas à Produção, com o objetivo de padronizar processos e procedimentos pertinentes à área.</li>
-                    <li>Responsável pelo monitoramento em tempo real do ecossistema da instituição (infraestrutura, aplicação e negócio), com o objetivo de detectar problemas e anomalias através de processos de engenharia e arquitetura de monitoração e observabilidade, coordenando respostas rápidas em situações de crise, orquestração e automação de processos tecnológicos.</li>
-                    <li>Responsável por garantir a estabilidade, disponibilidade e eficiência das operações de BI e Malha Batch da instituição, gerenciando a execução de processos de ETL e processamento de dados, identificando e resolvendo problemas, otimizando o desempenho e garantir que os relatórios e análises sejam entregues de forma oportuna, precisa e íntegra.</li>
-                    <li>Conhecimento e atuações na geração de valor e melhorias em processos com foco em "Service Delivery" (Disponibilidade/Monitoração/Observabilidade, capacidade, incidentes, problemas/gestão de crises, mudanças e ativos).</li>
-                    <li>Infraestrutura: Vmware, Sistemas Operacionais (Linux e Windows) e Conectividade (redes).</li>
-                    <li>Middleware: IIS e JBoss.</li>
-                    <li>Cloud: Google (GCP).</li>
-                    <li>Experiência: Rundeck, Control-M, PowerCenter, Connect Direct (IBM).</li>
-                    <li>Experiência em gestão de projetos e familiaridade com metodologias ágeis e/ou ITIL.</li>
-                    <li>Vivência no segmento bancário/serviços financeiros.</li>
-                </ul>
-                <h4>Conquistas:</h4>
-                <ul class="responsibilities">
+                <ul>
                     <li>Liderança de projetos de grande porte, com entrega de resultados de alta qualidade.</li>
                     <li>Implementação de soluções inovadoras que melhoraram a eficiência e a segurança dos sistemas do banco.</li>
                     <li>Desenvolvimento de equipes de alta performance, com foco em resultados e qualidade.</li>
+                    <li>Nesse papel, fui o responsável por liderar a adoção e aprimoramento de práticas ágeis em diversas equipes de desenvolvimento e teste, com o objetivo de acelerar a entrega de valor e aumentar a adaptabilidade às mudanças do mercado financeiro. Eu atuei diretamente na implementação e facilitação de cerimônias Scrum, como daily scrums, sprint reviews e retrospectivas, garantindo que as equipes se mantivessem alinhadas, identificassem impedimentos e promovessem a melhoria contínua.</li>
+                    <li>Minha atuação incluiu a definição e acompanhamento de métricas ágeis (como velocity e burndown charts), a gestão de backlogs de produto em colaboração com Product Owners, e a promoção de uma cultura de transparência e colaboração entre desenvolvedores, testadores e stakeholders. Além disso, incentivei a entrega incremental e contínua, garantindo que as funcionalidades fossem desenvolvidas em ciclos curtos e testadas exaustivamente, minimizando riscos e garantindo a qualidade dos produtos de software entregues ao Banco Santander.</li>
                 </ul>
             </div>
-
-            <div class="experience-item">
-                <h3>Operador de Computador</h3>
-                <p><strong>REPRATEC Rep e Assistência Téc. De Ap. Eletrônicos</strong> | Outubro/1992 a Maio/1998 (5 anos e 8 meses)</p>
-                <ul class="responsibilities">
-                    <li>Operação de computador, controles de estoque, conciliação bancária e BI.</li>
-                </ul>
-            </div>
-
             <div class="experience-item">
                 <h3>Gerente de Compras</h3>
                 <p><strong>Carrefour Comércio e Indústria</strong> | Junho/1988 a Maio/1990 (2 anos)</p>
-                <ul class="responsibilities">
+                <ul>
                     <li>Gerenciamento de loja, estoque e compras.</li>
                 </ul>
             </div>
         </section>
 
-        <section id="education">
-            <h2>Minhas Qualificações Acadêmicas</h2>
-
-            <div class="education-item">
-                <h3>Pós-graduação em Arquitetura de Software, Ciência de Dados e Cybersecurity (em andamento)</h3>
-                <p><strong>PUCCAMP - Campinas - SP</strong></p>
-                <p>Início: Novembro/2024 - Término: Novembro/2025</p>
-            </div>
-
-            <div class="education-item">
-                <h3>Superior em Gestão de Tecnologia da Informação (concluído)</h3>
-                <p><strong>Faculdade São Judas Tadeu - São Paulo - SP</strong></p>
-                <p>Início: Janeiro/2022 - Término: Setembro/2024</p>
-            </div>
-        </section>
-
-        <section id="skills">
-            <h2>Meu Conjunto de Habilidades</h2>
-
-            <h3>Habilidades Técnicas (Hard Skills):</h3>
-            <div class="skills-list">
-                <span class="skill-tag">Desenvolvimento Full-Stack</span>
-                <span class="skill-tag">Python</span>
-                <span class="skill-tag">Django</span>
-                <span class="skill-tag">Flask</span>
-                <span class="skill-tag">JavaScript</span>
-                <span class="skill-tag">React</span>
-                <span class="skill-tag">Vue.js</span>
-                <span class="skill-tag">Gestão de Tecnologia da Informação</span>
-                <span class="skill-tag">Liderança de Projetos</span>
-                <span class="skill-tag">Administração Pública</span>
-                <span class="skill-tag">Arquitetura de Software</span>
-                <span class="skill-tag">Ciência de Dados</span>
-                <span class="skill-tag">Cybersecurity</span>
-                <span class="skill-tag">Análise de Dados</span>
-                <span class="skill-tag">Metodologias Ágeis</span>
-                <span class="skill-tag">Governança de TI</span>
-                <span class="skill-tag">SIEM</span>
-                <span class="skill-tag">EDR</span>
-                <span class="skill-tag">IAM</span>
-                <span class="skill-tag">Firewalls</span>
-                <span class="skill-tag">DLP</span>
-                <span class="skill-tag">BCP/DRP</span>
-                <span class="skill-tag">VMware</span>
-                <span class="skill-tag">Sistemas Operacionais (Linux e Windows)</span>
-                <span class="skill-tag">Conectividade (redes)</span>
-                <span class="skill-tag">Middleware (IIS, JBoss)</span>
-                <span class="skill-tag">Cloud (Google Cloud Platform - GCP)</span>
-                <span class="skill-tag">Rundeck</span>
-                <span class="skill-tag">Control-M</span>
-                <span class="skill-tag">PowerCenter</span>
-                <span class="skill-tag">Connect Direct (IBM)</span>
-                <span class="skill-tag">ITIL</span>
-                <span class="skill-tag">Microsoft Office 365</span>
-                <span class="skill-tag">Microsoft Power BI ETL</span>
-                <span class="skill-tag">Google Apps</span>
-                <span class="skill-tag">Power Platform</span>
-                <span class="skill-tag">Figma (prototipagem)</span>
-                <span class="skill-tag">Inteligência Artificial (Conceitos e Aplicações)</span>
-            </div>
-
-            <h3>Habilidades Interpessoais (Soft Skills):</h3>
-            <div class="skills-list">
-                <span class="skill-tag">Visão Estratégica</span>
-                <span class="skill-tag">Inovação</span>
-                <span class="skill-tag">Resolução de Problemas Complexos</span>
-                <span class="skill-tag">Comunicação Eficaz e Assertiva</span>
-                <span class="skill-tag">Liderança de Equipes</span>
-                <span class="skill-tag">Gestão de Pessoas</span>
-                <span class="skill-tag">Tomada de Decisões</span>
-                <span class="skill-tag">Pensamento Crítico</span>
-                <span class="skill-tag">Negociação</span>
-                <span class="skill-tag">Inteligência Emocional</span>
-                <span class="skill-tag">Trabalho em Equipe / Cooperativo</span>
-                <span class="skill-tag">Adaptabilidade</span>
-                <span class="skill-tag">Aprendizado Contínuo (Aprendizagem Rápida)</span>
-                <span class="skill-tag">Foco no Cliente</span>
-                <span class="skill-tag">Integridade e Ética</span>
-                <span class="skill-tag">Respeito e Responsabilidade</span>
-                <span class="skill-tag">Flexibilidade</span>
-                <span class="skill-tag">Autenticidade</span>
-                <span class="skill-tag">Autoconsciente</span>
-                <span class="skill-tag">Dinâmico e Disciplinado</span>
-                <span class="skill-tag">Persistente</span>
-                <span class="skill-tag">Sociável</span>
-            </div>
-        </section>
-
         <section id="projects">
-            <h2>Portfólio e Projetos Notáveis</h2>
+            <h2>Projetos Notáveis</h2>
+            <div class="project-item">
+                <h4>Aplicação Web de CRM com Firebase</h4>
+                <p>Desenvolvimento e implementação de uma aplicação web de CRM robusta, utilizando Firebase para escalabilidade e eficiência.</p>
+            </div>
+            <div class="project-item">
+                <h4>Site da SoftUX (www.softux.app.br)</h4>
+                <p>Desenvolvimento de uma plataforma inovadora para bioinformática, atuando como bioinformacionista, destacando-se pelo design futurista e limpo.</p>
+            </div>
+        </section>
+
+        <section id="skills" class="skills-section">
+            <h2>Habilidades Técnicas (Hard Skills)</h2>
+
+            <h4>Desenvolvimento e Gestão</h4>
+            <ul>
+                <li>Full-Stack/DevOps/Git/CI/CD: HTML/PHP/CSS, Python, C++, C#, Django, Flask, JavaScript, Node.js, React, Vue.js, TypeScript.</li>
+                <li>Gestão de TI: Liderança de Projetos, Administração Pública, Arquitetura de Software, Governança de TI, ITIL.</li>
+                <li>Ciência e Análise de Dados: Análise de Dados, Microsoft Power BI ETL.</li>
+                <li>Automação/Orquestração: Rundeck, Control-M.</li>
+                <li>Transferência de Dados: PowerCenter, Connect Direct (IBM).</li>
+                <li>Ferramentas de Produtividade: Microsoft Office 365, Google Apps, Power Platform, Figma.</li>
+                <li>Inteligência Artificial: Tensor Flow/ Scikit learn.</li>
+                <li>Observabilidade: Dynatrace (APM), Zabbix, Grafana.</li>
+                <li>Middleware: IIS, JBoss.</li>
+            </ul>
             
-            <div class="project-item">
-                <h3>Projeto: Plataforma de Bioinformática - SoftUX</h3>
-                <p><strong>Descrição:</strong> Desenvolvimento da plataforma web para a SoftUX, uma empresa de bioinformática, com foco em um design inovador, futurista e limpo. O projeto inclui animações 3D interativas na seção principal, construídas com Three.js, para uma experiência de usuário imersiva.</p>
-                <ul class="tech-stack">
-                    <li><strong>Frontend:</strong> React, Vite, React Router, Tailwind CSS, Three.js, Lucide React.</li>
-                    <li><strong>Backend (Formulário):</strong> Firebase Functions com Node.js (v20) e Nodemailer.</li>
-                    <li><strong>Hospedagem & Deploy:</strong> Firebase Hosting.</li>
-                </ul>
-                <p><a href="https://www.softux.app.br" target="_blank" rel="noopener noreferrer" title="Visitar o site da SoftUX">Ver Projeto Online (www.softux.app.br)</a></p>
-            </div>
+            <h4>Sistemas Operacionais</h4>
+            <ul>
+                <li>Windows Server: Instalação, configuração, administração e troubleshooting (2012 R2, 2016, 2019, 2022).</li>
+                <li>Experiência com Active Directory, GPOs, DNS, DHCP, IIS, WSUS, Hyper-V e failover clustering.</li>
+                <li>Linux: Administração e manutenção de distribuições (Ubuntu, CentOS, Debian, Red Hat).</li>
+                <li>Experiência com serviços como Apache, Nginx, MySQL/PostgreSQL, SSH, Samba, NFS e scripts Shell.</li>
+            </ul>
 
-            <div class="project-item">
-                <h3>Projeto: Aplicação Web de CRM com Firebase</h3>
-                <p><strong>Descrição:</strong> Desenvolvi uma aplicação web completa de CRM (Customer Relationship Management) para o gerenciamento de clientes e empresas. O sistema inclui funcionalidades essenciais como autenticação de usuários, cadastro, consulta, além da geração dinâmica de etiquetas para impressão e relatórios detalhados em PDF.</p>
-                <p><strong>Stack Tecnológico:</strong> Frontend (HTML5, JavaScript ES6+), Backend (Firebase Authentication, Firestore), Estilização (Tailwind CSS, Font Awesome), Geração de Documentos (jsPDF, jsPDF-AutoTable).</p>
-                <p><a href="javascript:void(0);" title="Link para o projeto ou mais detalhes disponíveis sob consulta">Ver Detalhes (Se aplicável)</a></p>
-            </div>
+            <h4>Redes</h4>
+            <ul>
+                <li>Configuração e Gerenciamento: Roteadores, switches (Cisco, HP, Juniper, Ubiquiti), firewalls (FortiGate, Palo Alto, PfSense).</li>
+                <li>Protocolos: TCP/IP, VLANs, VPNs (IPSec, SSL VPN), OSPF, BGP, STP, LACP.</li>
+                <li>Monitoramento: Ferramentas como Zabbix, Nagios, PRTG.</li>
+                <li>Conectividade (geral).</li>
+            </ul>
 
-            <div class="project-item">
-                <h3>Projeto: Implantação da Escola de Governo no Município</h3>
-                <p><strong>Descrição:</strong> Gerenciamento de todas as fases de implementação da Escola de Governo no município de Franco da Rocha, incluindo o desenvolvimento do Manual de Operações, consolidando um investimento estratégico na institucionalização do conhecimento e na garantia da eficiência e perenidade das atividades da administração pública local.</p>
-                <p><strong>Tecnologias/Metodologias:</strong> Gestão de Projetos, Metodologias Ágeis, Governança.</p>
-                <p><a href="javascript:void(0);" title="Detalhes disponíveis sob consulta">Ver Detalhes (Se aplicável)</a></p>
-            </div>
+            <h4>Servidores e Virtualização</h4>
+            <ul>
+                <li>Hardware: Conhecimento aprofundado em servidores físicos (Dell, HP, Lenovo), configuração de RAID, iDRAC/iLO.</li>
+                <li>Virtualização: VMware vSphere (ESXi, vCenter), Proxmox, Hyper-V.</li>
+                <li>Backup e Recuperação de Desastres (DR): Veeam Backup & Replication, Bacula, rsync.</li>
+            </ul>
 
-            <div class="project-item">
-                <h3>Projeto: Redesenho de Processos Administrativos em Secretarias Municipais</h3>
-                <p><strong>Descrição:</strong> Liderança na elaboração de estudos e pesquisas para o desenvolvimento de metodologia de monitoramento e indicadores para planejamento, avaliação e gestão, bem como o redesenho de processos de 13 secretarias da prefeitura municipal, com foco na definição e incorporação de melhorias ao trabalho.</p>
-                <p><strong>Tecnologias/Metodologias:</strong> Análise de Processos, Gestão de Projetos.</p>
-                <p><a href="javascript:void(0);" title="Detalhes disponíveis sob consulta">Ver Detalhes (Se aplicável)</a></p>
+            <h4>Segurança da Informação</h4>
+            <ul>
+                <li>Cybersecurity: SIEM, EDR, IAM, Firewalls, DLP.</li>
+                <li>Firewall e IPS/IDS: Configuração e gerenciamento de regras de firewall, detecção e prevenção de intrusões.</li>
+                <li>Antivírus e Anti-malware: Administração de soluções corporativas.</li>
+                <li>Gestão de Vulnerabilidades: Realização de varreduras e aplicação de patches de segurança.</li>
+                <li>Políticas de Segurança: Desenvolvimento e implementação de políticas de segurança da informação.</li>
+                <li>Padrões de Segurança: ISO 27001, NIST, LGPD, GDPR.</li>
+                <li>Planos de Continuidade de Negócios (BCP/DRP).</li>
+            </ul>
+
+            <h4>Cloud Computing</h4>
+            <ul>
+                <li>Google Cloud Platform (GCP), Amazon Web Services (AWS), Microsoft Azure.</li>
+                <li>Experiência com plataformas como AWS (EC2, S3, VPC)/ Azure (VMs, Virtual Networks) para implantação e gerenciamento de recursos.</li>
+                <li>Migração segura para a nuvem e práticas Finops.</li>
+            </ul>
+        </section>
+
+        <section class="skills-section">
+             <h2>Habilidades Interpessoais (Soft Skills)</h2>
+             <ul>
+                 <li>Visão Estratégica</li>
+                 <li>Inovação</li>
+                 <li>Resolução de Problemas Complexos (Capacidade analítica para identificar, diagnosticar e solucionar problemas complexos em ambientes de TI)</li>
+                 <li>Proatividade (Antecipação de potenciais falhas e implementação de melhorias contínuas)</li>
+                 <li>Comunicação Eficaz e Assertiva (Boa comunicação interpessoal e técnica, tanto verbal quanto escrita)</li>
+                 <li>Liderança de Equipes</li>
+                 <li>Gestão de Pessoas</li>
+                 <li>Tomada de Decisões</li>
+                 <li>Pensamento Crítico</li>
+                 <li>Negociação</li>
+                 <li>Inteligência Emocional</li>
+                 <li>Trabalho em Equipe / Cooperativo (Habilidade para colaborar efetivamente com equipes multidisciplinares e compartilhar conhecimento)</li>
+                 <li>Adaptabilidade</li>
+                 <li>Aprendizado Contínuo (Aprendizagem Rápida)</li>
+                 <li>Foco no Cliente</li>
+                 <li>Integridade e Ética</li>
+                 <li>Respeito e Responsabilidade</li>
+                 <li>Flexibilidade</li>
+                 <li>Autenticidade</li>
+                 <li>Autoconsciente</li>
+                 <li>Dinâmico e Disciplinado</li>
+                 <li>Persistente</li>
+                 <li>Sociável</li>
+                 <li>Organização e Metodologia (Condução de projetos e tarefas de forma estruturada e eficiente)</li>
+             </ul>
+        </section>
+        
+        <section id="education">
+            <h2>Qualificações Acadêmicas</h2>
+            <div class="education-item">
+                <h4>Pós-graduação em Arquitetura de Software, Ciência de Dados e Cybersecurity (em andamento)</h4>
+                <p>PUCCAMP - Campinas - SP | Início: Novembro/2024 - Término: Novembro/2025</p>
             </div>
+            <div class="education-item">
+                <h4>Superior em Gestão de Tecnologia da Informação (concluído)</h4>
+                <p>Faculdade São Judas Tadeu - São Paulo - SP | Início: Janeiro/2022 - Término: Setembro/2024</p>
+            </div>
+        </section>
+        
+        <section id="objective">
+            <h2>Objetivo</h2>
+            <p>Meu objetivo é fortalecer a eficiência tecnológica e a segurança das operações, garantindo a resiliência e o sucesso contínuo das organizações. Estou à disposição para conversar sobre como minhas habilidades podem impactar positivamente sua equipe.</p>
         </section>
 
         <section id="contact">
-            <h2>Entre em Contato</h2>
+            <h2>Contato</h2>
             <div id="contact-info">
-                <p><strong>Celular:</strong> (11) 98107-9198</p>
+                <p><strong>Celular:</strong> <a href="tel:+5511981079198">(11) 98107-9198</a></p>
                 <p><strong>E-mail:</strong> <a href="mailto:josafa.souza@gmail.com">josafa.souza@gmail.com</a></p>
-                <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/josafa" target="_blank" rel="noopener noreferrer">linkedin.com/in/josafa</a></p>
+                <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/josafa" target="_blank" rel="noopener noreferrer">linkedin.com/in/josafa</a></p>
                 <p><strong>Endereço:</strong> São Paulo - SP</p>
             </div>
         </section>
-
-        <footer>
-            <p>Josafá de Pinho Souza © 2025</p>
-            <div class="social-icons">
-                <a href="https://www.linkedin.com/in/josafa" target="_blank" rel="noopener noreferrer" aria-label="Visite o perfil de Josafá no LinkedIn" title="LinkedIn">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                </a>
-            </div>
-        </footer>
     </div>
 </body>
 </html>
