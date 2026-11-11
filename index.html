@@ -87,11 +87,16 @@
             transition: var(--transition);
         }
 
+        .navbar .container {
+            max-width: 1360px;
+        }
+
         .nav-content {
             display: flex;
             align-items: center;
             justify-content: space-between;
             height: 72px;
+            gap: 16px;
         }
 
         .nav-brand {
@@ -104,7 +109,7 @@
             font-size: 1.15rem;
             letter-spacing: -0.02em;
             white-space: nowrap;
-            min-width: 0;
+            flex-shrink: 0;
         }
 
         .brand-name-short {
@@ -128,18 +133,20 @@
         .nav-links {
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 4px;
             list-style: none;
+            flex-shrink: 1;
         }
 
         .nav-links a {
             color: var(--text-muted);
             text-decoration: none;
-            font-size: 0.92rem;
+            font-size: 0.88rem;
             font-weight: 500;
-            padding: 8px 14px;
+            padding: 6px 11px;
             border-radius: var(--radius-sm);
             transition: var(--transition);
+            white-space: nowrap;
         }
 
         .nav-links a:hover, .nav-links a.active {
@@ -150,7 +157,8 @@
         .nav-actions {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
+            flex-shrink: 0;
         }
 
         .btn-nav-pdf {
@@ -159,9 +167,9 @@
             gap: 6px;
             background: var(--primary-gradient);
             color: #fff;
-            padding: 8px 14px;
+            padding: 7px 12px;
             border-radius: var(--radius-sm);
-            font-size: 0.82rem;
+            font-size: 0.80rem;
             font-weight: 600;
             text-decoration: none;
             transition: var(--transition);
@@ -1120,8 +1128,28 @@
            RESPONSIVIDADE MULTIDISPOSITIVOS (Smartphones Android/iPhone e Tablets)
            ========================================================== */
 
-        /* 1. Tablets e Telas Médias (<= 992px) */
-        @media (max-width: 992px) {
+        /* 0. Telas Compactas de Desktop & Laptops (<= 1180px) */
+        @media (max-width: 1180px) {
+            .brand-name-full {
+                display: none;
+            }
+            .brand-name-short {
+                display: inline;
+                font-size: 1.05rem;
+                font-weight: 700;
+            }
+            .nav-links a {
+                padding: 6px 8px;
+                font-size: 0.82rem;
+            }
+            .btn-nav-pdf {
+                padding: 6px 10px;
+                font-size: 0.76rem;
+            }
+        }
+
+        /* 1. Tablets e Telas Médias (<= 1024px) */
+        @media (max-width: 1024px) {
             .hero-grid {
                 grid-template-columns: 1fr;
                 text-align: center;
